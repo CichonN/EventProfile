@@ -1,0 +1,34 @@
+﻿@model web2.Models.User
+@{
+	ViewBag.Title = "About Us";
+}
+<style>
+	.user-image-container {
+		height: unset;
+	}
+</style>
+<h2>@ViewBag.Title</h2>
+<p>Thanks for using my website. It really means a lot. For real... I'm touched. My contact information is below. Have a great day.</p>
+@using (Html.BeginForm(FormMethod.Post)) {
+	<div class="user-image-container" >
+		<div>
+			<img src="~/Content/Images/Neina.jpg" />
+		</div>
+		<div>
+			@Model.FirstName @Model.LastName
+		</div>
+		<div style="font-size:smaller">
+			<a href="mailto:@Model.Email?subject=Tri-State Music Events"> @Model.Email</a>
+		</div>
+	</div>
+	<div class="section">
+		<button id="btnSubmit" name="btnSubmit" value="more" class="button-action"><i class="far fa-info-circle"></i> More</button>
+		<button class="button-cancel" id="btnClose" name="btnClose" value="close"><i class='fa fa-times'></i> Close</button>
+
+	</div>
+}
+<script>
+		$(document).ready(function () {
+			SetActiveMenus('AboutUs');
+		});
+	</script>

@@ -1,0 +1,27 @@
+﻿
+@{
+	ViewBag.Title = "More About Us";
+}
+<style>
+	.user-image-container {
+		height: unset;
+	}
+</style>
+<h2>@ViewBag.Title</h2>
+<p>Neina loves when programs work on the first try!</p>
+<div>
+	<img src="~/Content/Images/NZNeina.jpg" style="max-height:300px; max-width:400px; border-style:double; border-color:black; border-width:5px"/>
+</div>
+
+@using (Html.BeginForm(FormMethod.Post)) {
+
+	<div class="section">
+		<button class="button-cancel" id="btnClose" name="btnClose" value="close"><i class='fa fa-times'></i> Close</button>
+	</div>
+}
+<script>
+	$(document).ready(function () {
+		SetActiveMenus('aboutus');
+	});
+</script>
+
